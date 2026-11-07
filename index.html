@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Practical Writing Service</title>
+<style>
+:root{--bg:#fff7ec;--card:#ffffff;--ink:#241a3a;--muted:#6b5f80;--c1:#ff4d6d;--c2:#ff9f1c;--c3:#2ec4b6;--c4:#4361ee;--c5:#9b5de5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17112a;--card:#241a40;--ink:#fdf6ff;--muted:#bfb3d9}}
+:root[data-theme="dark"]{--bg:#17112a;--card:#241a40;--ink:#fdf6ff;--muted:#bfb3d9}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.hero{background:linear-gradient(135deg,var(--c1),var(--c2) 35%,var(--c3) 65%,var(--c4));color:#fff;text-align:center;padding:56px 18px 70px;border-radius:0 0 40px 40px}
+.hero h1{margin:0 0 10px;font-size:clamp(28px,6vw,48px);text-shadow:0 2px 8px rgba(0,0,0,.25)}
+.hero p{margin:0 auto 22px;max-width:560px;font-size:18px}
+.btn{display:inline-block;border:0;cursor:pointer;font-size:17px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--c5),var(--c1));padding:14px 28px;border-radius:50px;text-decoration:none;box-shadow:0 6px 18px rgba(155,93,229,.45)}
+main{max-width:900px;margin:0 auto;padding:0 16px 40px}
+h2{text-align:center;margin:40px 0 18px;font-size:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.cls{border:3px solid transparent;border-radius:20px;padding:22px 12px;text-align:center;color:#fff;font-weight:800;font-size:22px;cursor:pointer;transition:transform .15s}
+.cls small{display:block;font-weight:500;font-size:14px;opacity:.95}
+.cls:hover{transform:translateY(-4px)}
+.cls.sel{border-color:var(--ink);transform:scale(1.04);box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.k1{background:linear-gradient(135deg,#ff4d6d,#ff758f)}.k2{background:linear-gradient(135deg,#ff9f1c,#ffbf69)}
+.k3{background:linear-gradient(135deg,#2ec4b6,#6ee7d8)}.k4{background:linear-gradient(135deg,#4361ee,#7b92ff)}
+.plan{background:var(--card);border-radius:20px;padding:20px;border:3px solid var(--c5);cursor:pointer}
+.plan.sel{background:linear-gradient(135deg,var(--c5),var(--c4));color:#fff}
+.plan b{font-size:30px;display:block}
+.plan.p2{border-color:var(--c3)}.plan.p2.sel{background:linear-gradient(135deg,var(--c3),var(--c4))}
+.note{text-align:center;color:var(--muted);margin-top:12px}
+form{background:var(--card);border-radius:24px;padding:22px;box-shadow:0 8px 28px rgba(67,97,238,.18);border-top:8px solid var(--c1)}
+label{display:block;font-weight:700;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:12px;font-size:16px;border-radius:12px;border:2px solid var(--c4);background:var(--bg);color:var(--ink)}
+.bill{margin:18px 0;padding:16px;border-radius:16px;background:linear-gradient(135deg,var(--c2),var(--c1));color:#fff;font-size:18px}
+.bill div{display:flex;justify-content:space-between;padding:3px 0}
+.bill .t{font-size:24px;font-weight:800;border-top:2px dashed #fff;margin-top:6px;padding-top:8px}
+form .btn{width:100%;background:linear-gradient(90deg,#25d366,var(--c3))}
+.err{color:var(--c1);font-weight:700;min-height:22px}
+footer{text-align:center;padding:20px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="hero">
+<h1>✏️ Practical Writing Service</h1>
+<p>9th, 10th, 1st Year aur 2nd Year ke practicals ghar bethe likhwayein. Saaf likhai, waqt par delivery!</p>
+<a class="btn" href="#order">Abhi Order Karein</a>
+</header>
+<main>
+<h2>🎓 Apni Class Chunein</h2>
+<div class="grid" id="classes">
+<div class="cls k1" data-v="9th"><span>9th</span><small>Class 9</small></div>
+<div class="cls k2" data-v="10th"><span>10th</span><small>Class 10</small></div>
+<div class="cls k3" data-v="1st Year"><span>1st Year</span><small>FSc / ICS / FA</small></div>
+<div class="cls k4" data-v="2nd Year"><span>2nd Year</span><small>FSc / ICS / FA</small></div>
+</div>
+
+<h2>💰 Rates</h2>
+<div class="grid" id="plans">
+<div class="plan" data-v="own"><span>📚 Practical book hamari taraf se</span><b>Rs. 2500</b><small>Book + likhai dono shamil</small></div>
+<div class="plan p2" data-v="yours"><span>📖 Book aap khud den</span><b>Rs. 1500</b><small>Sirf likhai ka charge</small></div>
+</div>
+<p class="note">🚚 Delivery Charges (DC): Rs. 200</p>
+
+<h2 id="order">📝 Order Form</h2>
+<form id="f">
+<label>Aapka Naam</label><input id="name" placeholder="Naam likhein" required>
+<label>Phone / WhatsApp Number</label><input id="phone" type="tel" placeholder="03XX XXXXXXX" required>
+<label>Class</label>
+<select id="cls"><option value="">-- Class chunein --</option><option>9th</option><option>10th</option><option>1st Year</option><option>2nd Year</option></select>
+<label>Subject (Physics, Chemistry, Biology, Computer...)</label><input id="sub" placeholder="Subject ka naam">
+<label>Option</label>
+<select id="opt"><option value="">-- Option chunein --</option><option value="own">Book hamari taraf se (Rs. 2500)</option><option value="yours">Book main khud dunga (Rs. 1500)</option></select>
+<label>Pura Address (delivery ke liye)</label><textarea id="addr" rows="3" placeholder="Shehar, mohalla, ghar number" required></textarea>
+<div class="bill">
+<div><span>Practical Charges</span><span id="b1">Rs. 0</span></div>
+<div><span>Delivery (DC)</span><span id="b2">Rs. 200</span></div>
+<div class="t"><span>Total</span><span id="b3">Rs. 200</span></div>
+</div>
+<div class="err" id="err"></div>
+<button class="btn" type="submit">📲 WhatsApp par Order Bhejein</button>
+</form>
+</main>
+<footer>© Practical Writing Service • Banaya gaya pyaar se 🌈</footer>
+<script>
+// Apna WhatsApp number yahan likhein (92 ke sath, bina + ya space): e.g. "923001234567"
+var WA_NUMBER="923015755468";
+var PRICE={own:2500,yours:1500},DC=200;
+var $=function(i){return document.getElementById(i)};
+function calc(){var o=$("opt").value,p=PRICE[o]||0;$("b1").textContent="Rs. "+p;$("b3").textContent="Rs. "+(p+DC)}
+function mark(box,val){[].forEach.call(box.children,function(e){e.classList.toggle("sel",e.dataset.v===val)})}
+$("classes").onclick=function(e){var c=e.target.closest(".cls");if(!c)return;$("cls").value=c.dataset.v;mark($("classes"),c.dataset.v)};
+$("plans").onclick=function(e){var c=e.target.closest(".plan");if(!c)return;$("opt").value=c.dataset.v;mark($("plans"),c.dataset.v);calc()};
+$("cls").onchange=function(){mark($("classes"),this.value)};
+$("opt").onchange=function(){mark($("plans"),this.value);calc()};
+$("f").onsubmit=function(e){e.preventDefault();
+if(!$("cls").value||!$("opt").value){$("err").textContent="Pehle class aur option chunein.";return}
+$("err").textContent="";
+var o=$("opt").value,tot=PRICE[o]+DC;
+var m="Practical Order\nNaam: "+$("name").value+"\nPhone: "+$("phone").value+"\nClass: "+$("cls").value+"\nSubject: "+$("sub").value+"\nOption: "+(o==="own"?"Book aap ki taraf se":"Book customer dega")+"\nAddress: "+$("addr").value+"\nPractical: Rs. "+PRICE[o]+"\nDC: Rs. "+DC+"\nTotal: Rs. "+tot;
+window.open("https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(m),"_blank")};
+</script>
+</body>
+</html>
